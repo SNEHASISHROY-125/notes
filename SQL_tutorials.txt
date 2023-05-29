@@ -1,0 +1,96 @@
+
+Query > a command to retreve OR send data from the DataBase
+# Like Google Search .
+
+
+( DBMS -> Data Base Management System )
+
+C.R.U.D create , read/retreve , update , delete
+
+
+01.Relational Data base [ SQL ] (Structured Query Language)
+
+# Data stored in table {Row / Column}
+
+# Ex: Traditional Table
+
+
+
+02.Non-Relational Data base [noSQL , not just SQL]
+
+# Data stored in non Traditional Table,
+  # JSON , XML , Graphs
+
+
+
+( RDMS ) > Relational ( DBMS -> Data Base Management System )
+
+® mySQL , Oracle , postgrade , mariaDB
+
+( NRDMS ) > Non Relational ( DBMS -> Data Base Management System )
+
+® mongoDB , dynamoDb , apache , firebase.
+
+
+@ PRIMARY KEY > an unique key for specific piece of data to retreve from DB.
+
+
+
+@ PRIMARY KEY > 
+
+@ SURROGATE KEY > A kind of primary key that does not have a relation to the real world.
+ 
+@ NATURAL KEY > A kind of primary key that has a relation to the real world.
+
+@ FOREIGN KEY > A primary key that is linked with other data table.
+
+
+
+#  SQL : 
+	[combination of 4 different systems]->
+  -Data Query Language( DQL ) 
+     - Used to query DB's.
+  -Data Defination Language ( DDL )
+     - Used for defining database schemas.
+  -Data Controll Language (DCL)
+     - Used for acess controlling & user management.
+  -Data Manipulation Language ( DML )
+     - Used for C.R.U.D purposes.
+
+# SQL > Datatypes:
+
+INT > Integer values
+DECIMAL(m,n) > decimal num
+VARCHAR(x) > Ver_Char > to store string,with charec-No. of x
+BLOB > Binary Large Object > large number of binary file[JPG file]
+DATE > YYYY-MM-DD
+TIMESTAMP > YYYY-MM-DD HH:mm:SS > Used for recording purpose.
+
+# SQL Reserved Words:
+01. create  > to create something
+02. table > table of something.
+	@Every Command in sql ends with ' ; '
+
+⛑️To create DB & store data to it :
+ 
+I.Create the  SCHEMA
+II.Then insert  data to it.
+
+
+🍺 Creating the SCHEMA :
+>EX:	CREATE TABLE student(		# Creating a table collumn.
+	student_id INT,			# Defining the 1st collumn attribute, with its datatype 
+	name VARCHAR(20),			# Defining the next collumn attribute, with max charec we want.
+	major VARCHAR(20)
+	PRIMARY KEY(student_id)		# Setting up the primary key we want to set.
+);
+
+DESCRIBE student;		# {Command} To view/print the table.
+
+DROP TABLE student;		# {Command} To Delete the table. 
+
+ALTER TABLE student ADD gpa DECIMAL(3,2);	# Adding another collumn to the table.
+
+ALTER TABLE student DROP COLUMN gpa;	# If executed deletes a specific column from the table.
+
+🎈 Inserting Data:
