@@ -1,0 +1,102 @@
+@each comm starts with: git
+configure (global)name - git config --global user.name "abc"
+configure (global)email - git config --global user.email "abc@gmail.com"
+to see configuration - git config --list
+
+to go inside a folder - cd folder-name
+to make a folder - mkdir new-folder-name
+to view the new folder -cd new-folder-name
+to make new-folder-name -> working dir -code .
+
+ @how git works:
+working directory-> stagging area-> local repo.-> remote repo.
+   
+  test-project ---> git add  ---> git commit --> git push
+ @when working dir is in stagging area --> it is tracked
+ @when not in stagging area --> it is untracked
+
+to see status of dir , if its in staging area or not -> git status
+
+to add it:
+          01.initialize it --> git init
+          02.add it to st. area --> git add
+               @to add multiple files --> git add .
+to check hidden filesORfolders -> ls -file
+
+to see the modifications afere file is tracked --> git diff
+to restore (restage) -git restore <file-name>
+
+to commit --> git commit -m "<message>"
+                   @gives an unique id -> used for version controll
+to see commit history --> git log
+                @with a list of details; such as name ,commit-id ,author, date 
+                   @with less details -> git log --oneline
+to uncommit --> git reset --soft HEAD^
+              @going back to working dir -> git reset HEAD^
+                  @deleting all changes -> git reset --hard HEAD^
+to go back to another version of project -> git checkout <version-commit-id>
+to switch back to latest version -> git checkout master
+to see current version --> git show Head
+
+
+to add local repo to remote repo:
+                                   01.first time --> git remote add origin <URL of github(remote) repo>
+                                          01.1.rest of the time -->git remote add origin
+                                   02.git push -u origin <HEAD/Branch->name>
+
+to see if ther's a connection between local_repo <--> remote_repo --> git remote -v
+
+to pull from  remote/github repo --> git pull origin master
+
+to ingore a file from sharing --> @create < .gitignore > file and add the file that is to be excluded indide .gitignore file
+                                     @create a temp folder and add temp/ inside .gitignore
+
+to document project (as an instruction or manual) --> ceate README.md file 
+                           heading -> # heading ; ## heading ; ### heading  <---font size changes of heading
+                           single line -> ` <line01> ` <space> enter    |--\   line01
+                                          ` <line02> ` <space> enter    |--/   line02 
+                           multi line ->  ` <line1> `  enter            |---\   line1 line2
+                                          ` <line2> `  enter            |---/
+
+               OR
+                          
+                           multiple line ->     ```
+                                                line1            ---\     line1
+                                                line2            --- >    line2
+                                                line3            ---/     line3
+                                            
+                                                ```
+                          
+to add list --> 1 list01
+                2 list02
+     @unorganised list -> - item1                   item1
+                          - item2            ---\   item2      
+     @nested list  ->       - item3          ---/     item3
+                            - item4                   item4
+
+ 
+to add links --> 01. paste link                 --\    link
+                                                --/    [tag] -embeeded with link
+                 02. [<add tag>](paste link)
+
+to check how many branches do we have --> git branch
+to chech how many remote branches do we have -> git branch -r
+to check both remote and local branches -> git branch -a
+
+to create a new branch -> git branch <branch_name>            [ WHEN SWITCHING FROM PREVIOUS BRANCH
+                                                              [ THE NEW BRANCH GETS A COPY OF OF 
+to switch branches --> git checkout <branch_name>             [ PREVIOUS BRANCH
+
+@untill we push it remote the new branch will not appear on github; 2 ways:
+                                                                             -> <git add .> -> <git commit -m " "> -> merge with main branch then push as main barnch
+                                                                                                                                         OR
+                                                                                                                                           git push -u origin <branch_name>
+to del local branch -> git branch -d <branch_name>
+to del remote branch -> git push -d origin <branch_name>
+
+to contribute to other peoples repo --> 01.fork the repo 
+                                        02.clone it to local mechine: -> cd/users/snehasish/document
+                                                                      -> git clone <clone-url>
+to add collaborators --> settings -> add collaborators
+to publish pages --> settings -> gitub-pages
+                                                          
