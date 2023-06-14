@@ -1,4 +1,3 @@
-
 Query > a command to retreve OR send data from the DataBase
 # Like Google Search .
 
@@ -36,13 +35,13 @@ C.R.U.D create , read/retreve , update , delete
 
 
 
-@ PRIMARY KEY > 
+@ PRIMARY KEY : 
 
 @ SURROGATE KEY > A kind of primary key that does not have a relation to the real world.
- 
+   
 @ NATURAL KEY > A kind of primary key that has a relation to the real world.
 
-@ FOREIGN KEY > A primary key that is linked with other data table.
+@ FOREIGN KEY > A primary key that is linked with other data tables.
 
 
 
@@ -62,7 +61,7 @@ C.R.U.D create , read/retreve , update , delete
 INT > Integer values
 DECIMAL(m,n) > decimal num
 VARCHAR(x) > Ver_Char > to store string,with charec-No. of x
-BLOB > Binary Large Object > large number of binary file[JPG file]
+BLOB > Binary Large Object > large number of binary file[JPEG file]
 DATE > YYYY-MM-DD
 TIMESTAMP > YYYY-MM-DD HH:mm:SS > Used for recording purpose.
 
@@ -78,19 +77,54 @@ II.Then insert  data to it.
 
 
 🍺 Creating the SCHEMA :
->EX:	CREATE TABLE student(		# Creating a table collumn.
-	student_id INT,			# Defining the 1st collumn attribute, with its datatype 
-	name VARCHAR(20),			# Defining the next collumn attribute, with max charec we want.
-	major VARCHAR(20)
-	PRIMARY KEY(student_id)		# Setting up the primary key we want to set.
-);
+>EX:	CREATE TABLE student(			# Creating a table collumn.
+	student_id INT UNIQUE,			# Defining the 1st collumn attribute, with its datatype 
+	name VARCHAR(20) NOT NULL,			# Defining the next collumn attribute, with max charec we want.
+						 	 # NOT NULL > 'this field cant be null'
+	major VARCHAR(20) DEFAULT 'unknown' 	# UNIQUE > 'this field entry must be unique each time'
+	PRIMARY KEY(student_id)			# Setting up the primary key we want to set.
+);							# DEFAULT > 'if not inserted -> set that a default value'
 
-DESCRIBE student;		# {Command} To view/print the table.
+DESCRIBE student;		# {Command} To view/print the table schema.
 
-DROP TABLE student;		# {Command} To Delete the table. 
+DROP TABLE student;		# {Command} To Delete the table schema. 
 
-ALTER TABLE student ADD gpa DECIMAL(3,2);	# Adding another collumn to the table.
+ALTER TABLE student ADD gpa DECIMAL(3,2);	# Adding another collumn to the table.| 3 total number & 2 digits after point.
 
 ALTER TABLE student DROP COLUMN gpa;	# If executed deletes a specific column from the table.
 
 🎈 Inserting Data:
+INSERT INTO student VALUES(01 , 'mey' ,'finance');	# 
+
+INSERT INTO student VALUES(01 , 'mey' ,'biolodgy');	# 
+
+    	############################################################################################
+	########## If table has a default attribute ,still we need to specify the collumns #########
+	########## to which we want to insert values, while INSERTING new values.	   #########
+	############################################################################################
+
+
+
+🍨 Updating Collumns:
+UPDATE studet SET= major WHERE student_id =1; 	# UPDATE -> Update a collumn of a table, 
+						# SET -> set new values , WHERE <- condition , here it it the id = primary key. 
+						# We can use OR / AND to set condition (WHERE)
+# If not used 'WHERE' (UPDATE studet SET= major ; ) that will effect every single rows.
+
+🧁 Deleting Stuffs from Table:
+DELETE from student			# Delete from selected table, condition -> <what to delete>
+WHERE major = 'biology' ;		# We can use AND / OR.
+
+🍩 Querying Data:
+select * from student;		# Select everything from student and display.
+SELECT name from student;	# We can also select what column to display.
+
+SELECT name , major		# Select multiple attripute.
+from student			# 
+order name by desc;			# Order by ASC / DESC ( ascending OR descending oredr).
+
+SELECT * 		#
+from student		
+LIMIT 2			#  Limit amount of results we are getting back from the query, (here it give 2 rows) 
+
+♦️ (-- for commenting) (> , <) (>= , <=) (<> not equal) (OR / AND)
