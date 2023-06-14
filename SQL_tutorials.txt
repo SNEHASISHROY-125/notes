@@ -98,7 +98,7 @@ INSERT INTO student VALUES(01 , 'mey' ,'finance');	#
 
 INSERT INTO student VALUES(01 , 'mey' ,'biolodgy');	# 
 
-    	############################################################################################
+    ############################################################################################
 	########## If table has a default attribute ,still we need to specify the collumns #########
 	########## to which we want to insert values, while INSERTING new values.	   #########
 	############################################################################################
