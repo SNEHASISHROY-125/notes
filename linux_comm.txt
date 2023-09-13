@@ -1,0 +1,22 @@
+
+
+pwd -> print working dir
+whoami -> get current loggedin user
+date -> current date (date +%D , +&T ,+&H:&M)
+ls
+ls -lt -> complete details of files (ltr: reverse-sort,ls -lh :human-readbble size)
+clear clr+L
+cat -> to read file on terminal
+less -> same as cat but opens in editor , '/' search, 'n' next, 'shift+g' last line , p first occurance , '?' down-top search , 'q' exit editor
+more -> same as cat but loads file in portions
+touch -> create file
+rm -> delete file
+vi -> create new file and open in editor, 'i' insert ,'esc' exit insert mode, shift+:+w+q enter -> save&exit editior
+nano -> mordern editor
+mkdir -> create dir
+rmddir -> delete dir (rm -rf)
+cd ->
+cd .. ->
+/ -> root dir , . -> current-dir
+cp file /dest-dir -> copy  file and paste to destination dir
+ 

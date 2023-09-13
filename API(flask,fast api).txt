@@ -1,0 +1,27 @@
+### IN TERMINAL
+-i -X GET <api>	: i for ,to get server info
+X for ,to be able to use methodes like: GET
+
+###
+TYPES| API:
+01.REST API
+02.GRAPHQL API
+03.CRUD API	for DB's
+04.SOAP API	earliest Api
+
+###
+Linux: create_virtual_environment: python -m venv myenv
+	-> activate_it: source myenv/bin/activate
+
+	install_all_dependemcies: pip install -r requirements.txt
+	run: python app.py
+	OR flask run
+###
+value_frm_url=request.args.get('parameter'): http://URL?parameter=value
+
+value_frm_url -> part that is passed with api-req-url after'?'
+## {ERROR}
+add: if not value_frm_url: return 'error'
+	elif value_frm_url: return f'{value_frm_url}'
+## {QUERYSTRING}
+ 	'https://domain/page_id?q=something_to_search'

@@ -307,14 +307,14 @@ print('_'.join(f))         # 'x' ; puts x in between while joining
 help(str)
 
 
-# LIST OPP :
+##### LIST OPP :
 
 a= [12, 56 , 6.5 , 'abc']
 print(a)
 print(a[0])                  # prints<INDEX No.>str a[]
 print(a[1])                  # prints that whose index no. is [1]
 print(a[-1])                 #prints the last one<index no. '-1'
-
+              ### SLICING:
 print(a[0:3])               #print from index'0' upto '3'
 print(a[:3])                #print from the begining upto index'3'
 print(a[1:])                 #print from index'1' till the end.
@@ -400,7 +400,7 @@ print(g.setdefault('name'))              #works same as the .get if only the ite
 print(g.setdefault('name1' , 'new name'))            # if not in Dict. ; adds to Dict.
 
 k={'name' : 'r@125' ,'id' : 23 , 'age' : 45}
-g.update(k)                                             #Updates Dict. with the key that isn't present in the existing one.
+g.update(k)                                             #Updates Dict. with the key that isn't present in the existing one, rest unchanged.
 
 a=['a','b','c']
 print(dict.fromkeys(a,10))             #Takes the elements of list and assigns a same value to them.
@@ -417,6 +417,7 @@ dict = {
 }
 
 print(g.values())                       # gives the value present in Dict.
+print(g.keys())                         # gives the key present in Dict.
 print(g.items())                        #gives a list of tuples of pairs of Dict. keys&items.
 print(len(g))                   #Len of Dict. ; len= no. of key-values present in Dict.
 print(sorted(g))                # keys in ascending order.
