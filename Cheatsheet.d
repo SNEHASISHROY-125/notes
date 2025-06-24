@@ -111,6 +111,24 @@ enum { orange=10, mango=8 , apple=2 } /* Anonymous enum */
 	d~f	=> [5,5,5,5,5,2,50]		//concatanating
 */
 
+// Associate Array	(dict for python)
+	string[char] fruit_codes;	// value_type[key_type] arrey_type
+/*
+	fruit_codes['m'] = "mango";
+	.sizeof => size of the associate array
+	.length => numbers of value present in it
+	.dup => duplicate it with same size
+	.keys => gets all keys
+	.values => gets all vales
+	.rehash => reorganizes the associate array for effitient lookups
+	.byKey()
+	.byValue()
+	.get(KEY , default_VALUE) => gets the value associated with that key , if key doesnt exist returns default value
+	.remove(KEY) => removes that key and its value from the aarray
+*/
+
+
+
 void mai() { 
 // int[] nums = [1,2,3,4,11];
 // writeln( nums.all!(x => x>=0 && x<=9) );
@@ -213,10 +231,17 @@ void main() {
 	// enums
 	writeln(Constant_values.min , " " ,"size/length of the enum: " , Constant_values.sizeof );
 	writefln("the most loved fruit is: %s", orange);
+	// Concatanating with ~
 	writeln("string concatanation " , "bana"~""~"na", " " ,"banana".length);
+	// Array 
 	char[] s = "monkey loves banana".dup;
 	s[13..19]="applee";
 	char[] p = ['s','o'];
 	writeln("string replacement " , s);
 	writeln(s," ","and type is: ",typeof(s).stringof,"\nexample of char arrey[] ",p);
+	// associate arrays
+	fruit_codes['m'] = "mango";		// setting value
+	fruit_codes['o'] = "orange";
+	writefln("associate array of fruit codes: %s",fruit_codes['m']);
+	writeln(fruit_codes.get('a',"not_found_404"));
 }
