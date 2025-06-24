@@ -14,9 +14,60 @@ rm -> delete file
 vi -> create new file and open in editor, 'i' insert ,'esc' exit insert mode, shift+:+w+q enter -> save&exit editior
 nano -> mordern editor
 mkdir -> create dir
-rmddir -> delete dir (rm -rf)
+rmddir -> delete (empty)dir (rm -rf :removes non-empty-dir)
 cd ->
 cd .. ->
 / -> root dir , . -> current-dir
 cp file /dest-dir -> copy  file and paste to destination dir
- 
+mv file /dir -> move file to a dir-dest
+mv file new-file-name -> rename file name
+head -5 file -> display top 5 lines from file 
+history -> history of all used commands in previous sessons
+history -c -> clear history (deletes .bash_history file)
+tail -4 file -> display bottom 5 lines from file
+sort file -> sort a file
+sort -r file -> reverse sorting a file
+uniq -> gives uqnique values(no_duplicates) 
+sort file | uniq -> combines two comm
+split -l 3 file -> split a file into 3 line files
+grep 'word' file -> search for a specic word in a file
+egerp 'word1|word2' file -> multipleword search
+[Wildcart]
+* .extn -> displays files that ends with specific extn
+name * -> displays files starts with specific name
+touch file{1..5} -> creates 5 files with numeric suffix
+
+shuf file -> shuffle a file
+wc -l file -> gets no. of lines in a file
+cmp fileA fileB -> compares two file
+diff fileA fileB -> displays differences in two files
+diff fileA fileB -> +better visibility
+find /path/ -name file -> finds the specific file in that dir
+[ALTER(find)] updatedb -> updates its cached db before search
+locate file -> look for file 
+
+ls --help | more -> (more: page by page) help for comm
+man ls -> (man: manual) Info about comm
+which ls -> check path where comm is located
+bc -> calculator
+cal -> calender | cal dt yr > info about specific date
+script -> recodrd Terminal-activity (cntrl+d >exit)
+alias l="comm" -> make tempory comm-short-cut
+alias -p -> list all available shortcuts
+gzip file -> zip file
+gunzip file -> unzip file (alter: gzip -d file)
+tar -czf folder.tar.gz /dir/folder -> compress zip folder
+tar -xzf folder.tar.gz -> xtract zip folder
+zip files.zip fileA fileB -> multiple files to zip
+unzip files.zip -> unzip 
+unzip -l files.zip -> list files inside 
+wget URL -> downloades from the web using url
+wget -o file_name URl -> downld and save file to differant name
+curl <api-https:> -> 
+apt install package/app-name -> install app (sudo)
+apt list --installed | grep app -> look for a specific app installed
+apt search packagea_name -> search on the web  for that specific package
+systemctl status app.service -> check status of app(running/dead)
+systemctl start app.status -> start service (stop> stop service)
+systemctl list-units --type=service -> liist of all running services
+
