@@ -127,6 +127,38 @@ enum { orange=10, mango=8 , apple=2 } /* Anonymous enum */
 	.remove(KEY) => removes that key and its value from the aarray
 */
 
+// Pointers
+	auto price = 9.90;
+	double *pointr = null;	// memory addres
+/*
+	int *pointr = null;	null pointer (good practice) on init
+	pointr => memory address
+	*pointr => value
+	// pointer to pointer
+	int **pointr2 = &pointr	=> holds address of another pointer
+	**pointr => value
+	// pass pointer to func()
+	void func(int *pointr) {...}	// must declare pointer as a type of argument
+	// array to pointer
+	int[] prices = [10,20,9,67];
+	int *pointr = &prices[0]	// frist element's address
+	*(pointr++) => prices[1] => 20	// pointr(address)++ next address in the array
+	*(pointr++) => prices[2] => 9	//
+*/
+
+// Tuples
+	import std.typecons;
+	auto myTuple = tuple('s' , 10 , "bread" , false);
+	// Tuple Template
+	auto myTuple_template = Tuple!(int, "id", string , "name") (2 , "jazmin");
+/*
+	myTuple[0]	=> 's'
+	// Template's operation
+	myTuple_template.id	=> 2
+	myTuple_template[1] => "jazmin"
+*/
+
+
 
 
 void mai() { 
@@ -244,4 +276,9 @@ void main() {
 	fruit_codes['o'] = "orange";
 	writefln("associate array of fruit codes: %s",fruit_codes['m']);
 	writeln(fruit_codes.get('a',"not_found_404"));
+	// Pointers
+	pointr = &price;
+	writeln("pointer: ", pointr);
+	// Tuples
+	writeln("tuples: ", typeof(myTuple[]).stringof);
 }
