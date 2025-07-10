@@ -158,8 +158,34 @@ enum { orange=10, mango=8 , apple=2 } /* Anonymous enum */
 	myTuple_template[1] => "jazmin"
 */
 
+// Files
+	import std.file;
+	// new file
+	// File file = File("dfiles.txt" , "w");
+	// writing string
+	// file.writeln("dlang file operation example");
+	// read file
+	// writeln(file.readln());
+	// close
+	// file.close();
+	/*
+		r - read mode only
+		w - write at begining and if file doesnt exist create one
+		a - append mode
+		r+ - read & write mode
+		w+ - write & read mode
+		a+ - read and write but append only
+	*/
 
-
+// Exception
+	void exception_throw() {
+		if (1<9) {
+			throw new Exception("exec 01");
+		} else {
+			// else branch can be left empty or add logic here
+			writeln("hi");
+		}
+	}
 
 void mai() { 
 // int[] nums = [1,2,3,4,11];
@@ -168,8 +194,9 @@ void mai() {
 	bool check(char input) {
 		foreach (i; nums)
 		{
-			if (i == input)
-			{ writeln("found match");return true;}
+			if (i == input) { 
+				writeln("found match");
+			}
 			
 		}return false;
  
@@ -281,4 +308,28 @@ void main() {
 	writeln("pointer: ", pointr);
 	// Tuples
 	writeln("tuples: ", typeof(myTuple[]).stringof);
+	//Files
+	File file = File("dfiles.txt" , "w");
+	// writing string
+	file.writeln("dlang file operation example");
+	// read file
+	// writeln(file.readln());
+	// close
+	file.close();
+	// Exceptions and try catch
+	// try {
+	// 	exception_throw();
+	// } catch(Exception e) {
+	// 	writeln("Caught exception: ", e.msg);
+	// }
+	try {  
+      if( 0 == 0 ) {
+         throw new Exception("Cannot divide by zero!"); 
+      } else { 
+         auto result = 1/1; 
+      } 
+   } catch (Exception e) { 
+      auto result = e.msg; 
+	  writeln(result);
+   }
 }
