@@ -752,3 +752,7 @@ result=BeautifulSoup(b)              #BeautifulSoup_module takes the text & rend
 for i in result.find_all('a'):            #Find all the_ancher#Tag <for all the source of images_'img'>
         print(i.get('href'))              #Only gives me text present inside href.
                                             #For_image_sources->change 'href' To 'src' {'src'_attribute of thie image #Tag}
+
+v = lambda x: print(x)
+
+v(9)

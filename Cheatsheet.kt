@@ -133,10 +133,49 @@ var rnge = 1..10 // range 1 --> 10
     .sum()
     .count()
 */
+// List
+    var lists = listOf("mango" , "banana" , 12)
+/**
+    .toString()
+    .listIterator() --> creates an iterator for that list
+    .listIterator().hasNext()  --> (bool) if next loop iteration exists (use inside loop)
+    .listIterator().next()  --> next element (use inside loop)
+    .indices --> range of index
+    .size  --> size of list
+    in works with lists  if ("gg" in lists) {print(1)}
+    .contains(element) --> (bool) if list contains that element
+    .isEmpty()  --> (bool) if list is empty
+    .indexOf(element)  --> returns index of that element if present in list else -1
+    .get(index)  --> get element at that index
+    + --> cncatanation : list1 + list2 
+    - --> subtraction : list1 - list2 
+    .slice(range)  --> sliced list
+    .filterNotNull() --> ommit Nulls
+    .filter{ it.startswith("ma") } --> [(elements if startswith "ma") , ...]
+    .drop(index)
+    
+
+
+*/
 // functions
 /**
     fun fun_name (arg : arg_Type) : return_type {}
-*/
+*/  
+    fun divs(a:Int , b:Int):Int { return a%b }
+    // Hier-order methods
+    fun operation(a:Int , b:Int , method:(Int , Int) -> Int) { return method(a,b)}
+    // call it :
+    /*  operation(7 , 2 , ::divs) */
+    // LAMBDA
+    /* { var : Type -> var+=1 (operation)} */
+    var lambd = {cc : String -> cc.uppercase()}
+    // call it :
+    /* lambd("car") --> "CAR" */
+    // InLine methods
+    /* inline fun method(methodToCall:() -> return_type) { methodToCall() } */
+    inline fun myinline(method:() -> Unit) { method() }
+    // call it 
+    /* myinline( { print("my iline method works!") } ) */
 
 fun main():Unit {	// return type Unit > None
     var name = ""
