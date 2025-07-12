@@ -134,29 +134,68 @@ var rnge = 1..10 // range 1 --> 10
     .count()
 */
 // List
+    /* Imutable List */
     var lists = listOf("mango" , "banana" , 12)
 /**
+    in works with lists  if ("gg" in lists) {print(1)}
+    + --> cncatanation : list1 + list2 
+    - --> subtraction : list1 - list2 
     .toString()
     .listIterator() --> creates an iterator for that list
     .listIterator().hasNext()  --> (bool) if next loop iteration exists (use inside loop)
     .listIterator().next()  --> next element (use inside loop)
     .indices --> range of index
     .size  --> size of list
-    in works with lists  if ("gg" in lists) {print(1)}
+    .random()   --> random element
     .contains(element) --> (bool) if list contains that element
     .isEmpty()  --> (bool) if list is empty
     .indexOf(element)  --> returns index of that element if present in list else -1
     .get(index)  --> get element at that index
-    + --> cncatanation : list1 + list2 
-    - --> subtraction : list1 - list2 
     .slice(range)  --> sliced list
     .filterNotNull() --> ommit Nulls
     .filter{ it.startswith("ma") } --> [(elements if startswith "ma") , ...]
-    .drop(index)
-    
-
-
+    .groupBy{ condition }  : listOf(10, 12, 30, 31, 40, 9, -3, 0).groupBy{ it%3 }  >  {1=[10, 31, 40], 0=[12, 30, 9, -3, 0]}
+    .map{ cndition }  :  (10, 12, 30, 31, 40, 9, -3, 0).map{ it<=10 }   >   [true, false, false, false, false, true, true, true]
+    */
+    // Mutable List (Set)
+    var mulablelists = mutableSetOf(11 , 17 , 'd' , 2.44499f)
+    /*
+    .add(item)
+    .remove(item)
 */
+// Map 
+    /* Imutable Map */
+    var maps = mapOf("id" to 10 , "name" to "roy" )
+    // maps["id"] --> "10"
+/*  
+    .size
+    .isEmpty()
+    .values   --> vakues of map
+    .keys     --> keys of map
+    .entries  --> list representation of map entries
+    .toString()
+    .toList()
+    .iterator()  &  .hasNext()  & next()  works
+    .containsKey(key)   --> (bool)
+    .containsValue(value)   --> (bool)
+    .get(key)   --> corrosponding key
+    .remove(key)  --> removing the key-entry
+    +   --> map1 + map2 
+    -   --> map1 - map2 
+    .toSortedMap()  --> returns sorted map in accending order
+    .sortedDescending()
+    .filter{ condition }
+    .filterKeys{ condition }   ---> filter by keys
+    .filterValues{ it > 2}  */ 
+
+    /* mutable Map */
+    var immutablemap = mutableMapOf()
+    // maps[key] = value | adding new entries
+    /*
+    .put(key , value)   --> register a new entry with that key : value
+*/
+
+
 // functions
 /**
     fun fun_name (arg : arg_Type) : return_type {}
